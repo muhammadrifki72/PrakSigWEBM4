@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h1>Menampilkan Bilangan Prima</h1>
+    <label for="angka">Masukkan Angka:</label>
+    <input type="number" id="angka"><br>
+   
+    <button onclick="CekBilanganPrima()">Klik</button>
+    <p id="hasil"></p>
+
+    <script>
+        function CekBilanganPrima() {
+            var angka = document.getElementById("angka").value;
+            var hasil = document.getElementById("hasil");
+            var bilPrima = [];
+
+            for (var i = 2; i <= angka; i++) {
+                isPrima = 1;
+
+                for (var j = 2; j <= i; j++) {
+                    if (i % j === 0) {
+                        isPrima++;
+                    }
+                }
+
+                if (isPrima === 2) {
+                    document.getElementById("hasil").insertAdjacentHTML('beforeend', i + '<br>');
+                }
+            }
+        }
+    </script>
+</body>
+</html>

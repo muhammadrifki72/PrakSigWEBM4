@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Cek Nama dan Umur</h1>
+   
+<label for="nama">Nama:</label>
+<input type="text" id="nama"><br>
+
+<label for="umur">Umur:</label>
+<input type="number" id="umur"><br>
+
+<button onclick="klik()">Klik</button>
+<p id="peringatan"></p>
+<p id="hasil"></p>
+
+<script>
+    function klik() {
+        var nama = document.getElementById("nama").value;
+        var umur = document.getElementById("umur").value;
+        var peringatan = document.getElementById("peringatan");
+        var hasil = document.getElementById("hasil");
+         if (nama === "") {
+            peringatan.innerHTML = "Isikan nama!!";
+        }
+        else {
+            peringatan.innerHTML = "";
+            if (umur >= 1 && umur <= 5) {
+                hasil.innerHTML = "Anda masih bayi";
+            } else if (umur >= 6 && umur <= 15) {
+                hasil.innerHTML = "Anda masih anak-anak";
+            } else if (umur >= 16 && umur <= 30) {
+                hasil.innerHTML = "Anda masih remaja";
+            } else if (umur >= 31 && umur <= 60) {
+                hasil.innerHTML = "Anda sudah dewasa";
+            } else if (umur > 60) {
+                hasil.innerHTML = "Anda sudah dewasa";
+            } else {
+                hasil.innerHTML = "Anda Game Over";
+            }
+        }
+    }
+</script>
+</body>
+</html>

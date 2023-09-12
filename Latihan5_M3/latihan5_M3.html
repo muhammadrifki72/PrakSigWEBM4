@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h1>Menampilkan Deret Bilangan Fibonacci</h1>
+   
+    <label for="angka">Masukkan Angka:</label>
+    <input type="number" id="angka"><br>
+    
+    <button onclick="BilanganFibonacci()">Klik</button>
+    <p id="hasil"></p>
+
+<script>
+    function BilanganFibonacci() {
+    var angka = document.getElementById("angka").value;
+    document.getElementById("hasil").innerHTML = fibonacci (angka);
+    }
+
+    var sequence = [0]; 
+    var previousNumber = 1;
+    var presentNumber = 0;
+    var sum = 0;
+ 
+    function fibonacci (angka) {
+  
+    while (sequence.length < angka) {
+        sum = previousNumber + presentNumber;
+        previousNumber = presentNumber;
+        presentNumber = sum;
+        sequence.push(sum);
+    }
+    return (sequence);
+}
+</script>
+</body>
+</html>
